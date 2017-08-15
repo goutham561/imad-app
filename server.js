@@ -30,7 +30,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 var names=[];
-app.get('/submit-name/:name', function (req, res) {//:name is a parameter
+app.get('/submit-name/:name', function (req, res) {//:name is a "parameter"
     
     var name=req.params.name;
     
