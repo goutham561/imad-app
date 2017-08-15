@@ -29,10 +29,20 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-var names=[];
-app.get('/submit-name/:name', function (req, res) {
+/*var names=[];
+app.get('/submit-name/:name', function (req, res) {//:name is a parameter
     
     var name=req.params.name;
+    
+    names.push(name);
+    //JSON Javascript object notation converting //js objects into strings
+    res.send(JSON.stringify(names));
+});
+*/
+var names=[];
+app.get('/submit-name/:name', function (req, res) {//:name is a parameter
+    
+    var name=req.querry.name;
     
     names.push(name);
     //JSON Javascript object notation converting //js objects into strings
