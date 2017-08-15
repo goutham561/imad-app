@@ -40,7 +40,7 @@ app.get('/submit-name/:name', function (req, res) {//:name is a parameter
 });
 */
 var names=[];
-app.get('/submit-name/:name', function (req, res) {//:name is a parameter
+app.get('/submit-name', function (req, res) {//:name is a parameter
     
     var name=req.querry.name;
     
