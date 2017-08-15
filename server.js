@@ -42,7 +42,7 @@ app.get('/submit-name/:name', function (req, res) {//:name is a parameter
 var names=[];
 app.get('/submit-name', function (req, res) {
     
-    var name=req.querry.name;
+    var name=req.query.name;
     
     names.push(name);
     //JSON Javascript object notation converting //js objects into strings
