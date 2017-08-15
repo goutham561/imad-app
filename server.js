@@ -29,6 +29,7 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+/*
 var names=[];
 app.get('/submit-name/:name', function (req, res) {//:name is a "parameter"
     
@@ -38,8 +39,8 @@ app.get('/submit-name/:name', function (req, res) {//:name is a "parameter"
     //JSON Javascript object notation converting //js objects into strings
     res.send(JSON.stringify(names));
 });
-
-/*var names=[];
+*/
+var names=[];
 app.get('/submit-name', function (req, res) {
     // '/submit-name?name=abcd' will be the url in this case
     var name=req.query.name;
@@ -48,7 +49,7 @@ app.get('/submit-name', function (req, res) {
     //JSON Javascript object notation converting //js objects into strings
     res.send(JSON.stringify(names));
 });
-*/
+
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
