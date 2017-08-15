@@ -35,7 +35,7 @@ app.get('/submit-name/:name', function (req, res) {
     var name=req.params.name;
     
     names.push(name);
-    //JSON Javascript object notation
+    //JSON Javascript object notation converting //js objects into strings
     res.send(JSON.stringify(names));
 });
 
