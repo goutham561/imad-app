@@ -1,7 +1,14 @@
 var express = require('express');//lib create the web server 
 var morgan = require('morgan');//output the logs of the server what //reuests are comming to the server and how we are responding
 var path = require('path');
-
+var Pool=requires('pg').Pool;
+var config={
+    user:"adunurigouthamkumar",
+    database:"adunurigouthamkumar",
+    host:"db.imad.hasura-app.io",
+    port:"5432",
+    password:process.env.DB_PASSWORD
+}
 var app = express();
 app.use(morgan('combined'));
 
@@ -10,6 +17,22 @@ app.get('/', function (req, res) {
 });
 app.get('/article-one',function(req,res){
    res.send('Article one requested and will be served here'); 
+});
+
+//create the pool somewhere globally so its lifetime
+//lasts as long as your app is runing.
+var pool=new Pool(config);
+app.get('/test-db',function(req,res){
+   //make a select request 
+   //return a response with the results
+   pool.querry('select * from test',function(err,result){
+       if(err){
+           res.status(500).send(err.toString());
+       }
+       else{
+           res.send(JSON.stringify(result));
+       }
+   });
 });
 
 var counter=0;
