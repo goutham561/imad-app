@@ -1,7 +1,7 @@
 var express = require('express');//lib create the web server 
 var morgan = require('morgan');//output the logs of the server what //reuests are comming to the server and how we are responding
 var path = require('path');
-var Pool=requires('pg').Pool;
+var Pool=require('pg').Pool;
 var config={
     user:"adunurigouthamkumar",
     database:"adunurigouthamkumar",
